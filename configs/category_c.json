@@ -1,0 +1,69 @@
+{
+  "teacher_model": "Qwen/Qwen2.5-0.5B",
+  "dataset": "Salesforce/wikitext",
+  "dataset_config": "wikitext-103-raw-v1",
+  "train_split": "train",
+  "eval_split": "test",
+  "text_field": "text",
+  "sequence_length": 512,
+  "target_parameters": 64000000,
+  "layers": 8,
+  "heads": 8,
+  "steps": 15000,
+  "batch_size_main": 4,
+  "batch_size_genuine": 8,
+  "learning_rate": 0.0003,
+  "warmup_steps": 500,
+  "weight_decay_main": 0.01,
+  "weight_decay_genuine": 0.1,
+  "gradient_clip": 1.0,
+  "kd_temperature": 2.0,
+  "kd_alpha": 0.7,
+  "seed": 42,
+  "main_vocabularies": [
+    "Full",
+    "K50K",
+    "K20K",
+    "K10K"
+  ],
+  "genuine_vocabularies": [
+    10000,
+    20000,
+    50000
+  ],
+  "train_rows_main": "first 80,000 rows of the train split with >= 20 stripped characters",
+  "train_rows_genuine": "all rows of the train split with >= 20 stripped characters",
+  "lr_schedule_main": "linear warmup (500 steps) then cosine decay",
+  "lr_schedule_genuine": "constant (no warmup, no decay)",
+  "seeds_main": [
+    42,
+    1,
+    2
+  ],
+  "lr_sweep": {
+    "configs": [
+      "Full",
+      "K20K",
+      "K10K"
+    ],
+    "peak_lr": [
+      0.0001,
+      0.0003,
+      0.0006,
+      0.001
+    ],
+    "seed": 42
+  },
+  "dense_grid_requested_vocabularies_reconstructed": [
+    5001,
+    15001,
+    30001,
+    75001
+  ],
+  "depth_control": {
+    "config": "K20K",
+    "layers": 16
+  },
+  "oov_surrogate_student_id": 0,
+  "eval": "full WikiText-103 test split, rows joined with blank lines, non-overlapping 512-token windows (stride 512), BPB = summed NLL / (bytes * ln 2)"
+}

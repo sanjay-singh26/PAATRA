@@ -1,0 +1,11 @@
+experiment,config,seed,vocab_size,params,bpb,ppl,total_loss,kd_loss,ce_loss,train_minutes,provenance
+main_sweep,Full,42,151665,63745608,1.4165,,2.526,1.927,3.923,103,"transcribed from manuscript (seed-42 BPB: Table 5 and per-seed table; losses and train time: Table 8, primary-sweep run); raw evaluation CSV not bundled"
+main_sweep,K50K,42,47181,64549536,1.3384,,2.247,1.689,3.551,85,"transcribed from manuscript (seed-42 BPB: Table 5 and per-seed table; losses and train time: Table 8, primary-sweep run); raw evaluation CSV not bundled"
+main_sweep,K20K,42,20002,64612800,1.3438,,2.222,1.709,3.419,80,"transcribed from manuscript (seed-42 BPB: Table 5 and per-seed table; losses and train time: Table 8, primary-sweep run); raw evaluation CSV not bundled"
+main_sweep,K10K,42,10002,63520800,1.4149,,2.244,1.790,3.303,77,"transcribed from manuscript (seed-42 BPB: Table 5 and per-seed table; losses and train time: Table 8, primary-sweep run); raw evaluation CSV not bundled"
+main_sweep,Ablation_20K,42,20002,18453536,1.4322,,2.604,2.084,3.819,50,"transcribed from manuscript (BPB: Table 5; losses and train time: Table 8); raw evaluation CSV not bundled"
+teacher_screen,50K,,50000,,,20.49,,,,,transcribed from manuscript (teacher-only screen table); screen script not bundled
+teacher_screen,30K,,30000,,,22.31,,,,,transcribed from manuscript (teacher-only screen table); screen script not bundled
+teacher_screen,20K,,20000,,,29.17,,,,,transcribed from manuscript (teacher-only screen table); screen script not bundled
+teacher_screen,10K,,10000,,,58.13,,,,,transcribed from manuscript (teacher-only screen table); screen script not bundled
+teacher_screen,5K,,5000,,,135.28,,,,,transcribed from manuscript (teacher-only screen table); screen script not bundled
