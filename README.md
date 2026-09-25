@@ -88,9 +88,4 @@ Every run uses 15,000 steps. Distilled students target about 64M parameters; the
 - **Not bundled:** the teacher-only screen script, the CPU runtime benchmark script, the CC-News sampling script, and the script that produced the training-curve figure. Their measurements are reported as-is in the paper.
 - **Evaluation data.** All model selection and evaluation use the WikiText-103 test split; there is no separate validation split.
 
-## Build the paper
 
-```bash
-cd paper
-pdflatex main && bibtex main && pdflatex main && pdflatex main
-```
